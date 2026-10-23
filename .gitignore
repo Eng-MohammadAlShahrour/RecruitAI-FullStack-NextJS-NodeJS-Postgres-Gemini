@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.env
+.env.local
+.env*.local
+!.env.example
+*.log
+.DS_Store
+supabase/.branches/
+supabase/.temp/
+supabase/snippets/
+.idea/
+.vscode/
+*.tsbuildinfo
+debug.txt
+.env.local.backup

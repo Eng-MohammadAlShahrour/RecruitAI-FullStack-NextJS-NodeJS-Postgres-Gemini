@@ -1,0 +1,44 @@
+{
+  "note": "Sample signed Stripe webhook events. Secret: whsec_demo_test_secret",
+  "events": [
+    {
+      "description": "acme subscribes",
+      "headers": {
+        "Stripe-Signature": "t=1791211200,v1=22ef3d2e9af99f8135f35067958213c9c6b9b911798eb3f4180d21171d3e1f04"
+      },
+      "payload": "{\"id\":\"evt_demo_acme_1\",\"object\":\"event\",\"created\":1791211200,\"type\":\"customer.subscription.created\",\"data\":{\"object\":{\"id\":\"sub_demo_acme\",\"status\":\"active\",\"metadata\":{\"company\":\"acme\"}}}}"
+    },
+    {
+      "description": "the same event delivered again",
+      "headers": {
+        "Stripe-Signature": "t=1791211205,v1=334f9b28cacacf64f7c3e7b7e4e27689d0c443eb7aa17c49405ca5150dd09ff6"
+      },
+      "payload": "{\"id\":\"evt_demo_acme_1\",\"object\":\"event\",\"created\":1791211200,\"type\":\"customer.subscription.created\",\"data\":{\"object\":{\"id\":\"sub_demo_acme\",\"status\":\"active\",\"metadata\":{\"company\":\"acme\"}}}}"
+    },
+    {
+      "description": "globex's newer event arrives first",
+      "headers": {
+        "Stripe-Signature": "t=1791211330,v1=1a771ec5c8ff206c3bbd0e01383d651e20c5771b9fcac9780e3ec16b2e43888e"
+      },
+      "payload": "{\"id\":\"evt_demo_globex_2\",\"object\":\"event\",\"created\":1791211320,\"type\":\"customer.subscription.updated\",\"data\":{\"object\":{\"id\":\"sub_demo_globex\",\"status\":\"active\",\"metadata\":{\"company\":\"globex\"}}}}"
+    },
+    {
+      "description": "globex's older event arrives late",
+      "headers": {
+        "Stripe-Signature": "t=1791211335,v1=62099ed84d6441bdfe2f5c626a8dc2fb3eaf3885ef2770891c389fd206f5b9fc"
+      },
+      "payload": "{\"id\":\"evt_demo_globex_1\",\"object\":\"event\",\"created\":1791211260,\"type\":\"customer.subscription.created\",\"data\":{\"object\":{\"id\":\"sub_demo_globex\",\"status\":\"incomplete\",\"metadata\":{\"company\":\"globex\"}}}}"
+    },
+    {
+      "description": "acme cancels",
+      "headers": {
+        "Stripe-Signature": "t=1791211380,v1=ee591eb9d37569ea528ab712a20d32438ae79bd1c2339808e167a580ddbb51cb"
+      },
+      "payload": "{\"id\":\"evt_demo_acme_2\",\"object\":\"event\",\"created\":1791211380,\"type\":\"customer.subscription.deleted\",\"data\":{\"object\":{\"id\":\"sub_demo_acme\",\"status\":\"canceled\",\"metadata\":{\"company\":\"acme\"}}}}"
+    }
+  ],
+  "expected_plans_after": {
+    "acme": "free",
+    "globex": "paid"
+  }
+}

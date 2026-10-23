@@ -1,0 +1,3 @@
+-- Intentionally empty.
+-- Seed data is loaded via `npm run seed-auth` and `npm run load-candidates`
+-- (see Makefile `setup` target).
