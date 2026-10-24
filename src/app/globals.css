@@ -198,11 +198,13 @@ a:hover { text-decoration: underline; }
 
   .container { padding: 16px 12px; }
 
-  .nav-inner { padding: 10px 12px; gap: 8px; }
-  .nav-left { gap: 8px; flex: 1; min-width: 0; }
+  .nav-inner { padding: 10px 12px; gap: 6px 8px; flex-wrap: wrap; align-items: center; }
+  .nav-left { gap: 4px 8px; min-width: 0; flex: 1 1 auto; flex-wrap: wrap; }
   .nav-brand { font-size: 16px; }
-  .nav-link { padding: 5px 9px; font-size: 13px; }
-  .nav-right { width: 100%; justify-content: flex-end; }
+  .nav-links { flex-wrap: wrap; gap: 2px; }
+  .nav-link { padding: 5px 8px; font-size: 13px; }
+  .nav-right { width: auto; flex-shrink: 0; margin-left: auto; }
+  .nav-right button { font-size: 12px; padding: 5px 10px; }
 
   .plan-badge-wrap {
     position: static;
