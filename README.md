@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="docs/screenshots/hero.png" alt="RecruitAI — plain-English candidate search" width="100%" />
+</p>
 <div align="center">
 
 # RecruitAI
