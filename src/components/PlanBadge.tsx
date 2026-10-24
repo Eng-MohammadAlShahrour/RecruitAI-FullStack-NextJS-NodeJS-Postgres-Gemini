@@ -59,7 +59,7 @@ export function PlanBadge() {
             </h2>
             <p className="muted" style={{ marginBottom: 20 }}>
               {isFree
-                ? "Free plan includes 1 search total. Upgrade for unlimited searches, saved briefs, and shortlists."
+                ? "Free plan includes 2 searches total. Upgrade for unlimited searches, saved briefs, and shortlists."
                 : "Thanks for being a paid customer. You have unlimited searches."}
             </p>
             {isFree && (
